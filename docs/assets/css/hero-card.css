@@ -1,0 +1,701 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+/* Header Styling */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* Header logo image Styling */
+.header-logo img {
+  height: 50px;
+}
+
+/* Unordered List Styles */
+ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+/* List Items Styling */
+.list-item {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* List Items hover text color */
+.list-item:hover {
+  color: #00ff88;
+}
+
+/* Header List Items Line animation */
+.list-item::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00ff88;
+  transition: width 0.3s ease;
+}
+/* List Item line animation width when hover */
+.list-item:hover::after {
+  width: 100%;
+}
+
+/* Main Content Styling */
+.main-content {
+  padding-top: 100px;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.page-title {
+  color: #fff;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+/* Updated Hero Card Container */
+.heroes-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* New Hero Card Design */
+.hero-card {
+  position: relative;
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Hero Image Container */
+.hero-card-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+/* Hero Name Overlay */
+.hero-card-button-top {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+}
+
+.hero-card-button-top button {
+  background: linear-gradient(135deg, #00ff88 0%, #00ccff 100%);
+  color: #000;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.hero-card-button-top small {
+  display: block;
+  color: #fff;
+  margin-top: 5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Info Overlay */
+.hero-card-infos {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  padding: 1.5rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+  max-height: 70%;
+  overflow-y: auto;
+  border-top: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.hero-card-infos.active {
+  bottom: 0;
+}
+
+/* Table Styles */
+.hero-info-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+}
+
+.hero-info-table td {
+  padding: 0.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.table-label {
+  color: #00ff88;
+  font-weight: 500;
+  width: 40%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+/* View Link Style */
+.hero-info-table a {
+  color: #00ff88;
+  text-decoration: none;
+  padding: 0.3rem 1rem;
+  border-radius: 4px;
+  background: rgba(0, 255, 136, 0.1);
+  transition: all 0.3s ease;
+}
+
+.hero-info-table a:hover {
+  background: rgba(0, 255, 136, 0.2);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+/* Scrollbar Styling */
+.hero-card-infos::-webkit-scrollbar {
+  width: 6px;
+}
+
+.hero-card-infos::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-card-infos::-webkit-scrollbar-thumb {
+  background: #00ff88;
+  border-radius: 3px;
+}
+
+/* Image Overlay Gradient */
+.hero-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroes-card-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding: 1rem;
+  }
+
+  .hero-card {
+    height: 400px;
+  }
+
+  .hero-info-table {
+    font-size: 0.8rem;
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  margin-top: 4rem;
+  border-top: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+/* Magic Glow Effect */
+.hero-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    45deg,
+    #00ff88,
+    #00ffee,
+    #00a2ff,
+    #0066ff,
+    #00ff88,
+    #00ffee,
+    #00a2ff,
+    #0066ff
+  );
+  z-index: -1;
+  border-radius: 22px;
+  background-size: 400%;
+  animation: glowBorder 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-card:hover::before {
+  opacity: 1;
+}
+
+/* Magical Sparkles */
+.hero-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.hero-card:hover::after {
+  opacity: 1;
+}
+
+/* Magical Overlay */
+.hero-card-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    125deg,
+    transparent 0%,
+    rgba(0, 255, 136, 0.1) 30%,
+    rgba(0, 162, 255, 0.1) 70%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-card:hover .hero-card-image::before {
+  opacity: 1;
+}
+
+/* Lightning Effect */
+@keyframes glowBorder {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Add blur and darken effect when info is active */
+.hero-card:hover .hero-card-image img {
+  filter: brightness(0.4) blur(4px);
+  transform: scale(1.05);
+}
+
+/* Add a gradient overlay to improve text readability */
+.hero-card-infos::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  pointer-events: none;
+}
+
+:root {
+  --primary-color: #00ff88;
+  --secondary-color: #ff3860;
+  --bg-dark: #0a0a0a;
+  --bg-darker: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --neon-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rajdhani", sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Custom Cursor */
+.cursor {
+  width: 8px;
+  height: 8px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+  mix-blend-mode: difference;
+  opacity: 1;
+}
+
+.cursor-follower {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
+  mix-blend-mode: difference;
+  opacity: 0.7;
+}
+
+/* Cursor Hover Effects */
+a:hover ~ .cursor,
+button:hover ~ .cursor,
+.hero-card:hover ~ .cursor {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: var(--primary-color);
+}
+
+a:hover ~ .cursor-follower,
+button:hover ~ .cursor-follower,
+.hero-card:hover ~ .cursor-follower {
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 1;
+}
+
+/* Make sure all interactive elements have cursor: none */
+a,
+button,
+.hero-card,
+.list-item,
+.menu-toggle,
+body {
+  cursor: none !important;
+}
+
+/* Header Styles */
+header {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem 5%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+.header-logo img {
+  height: 60px;
+  filter: drop-shadow(0 0 5px var(--primary-color));
+  transition: transform 0.3s ease;
+}
+
+.header-logo img:hover {
+  transform: scale(1.05);
+}
+
+.nav-menu ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.list-item {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.list-item:hover {
+  color: var(--primary-color);
+  text-shadow: var(--neon-shadow);
+}
+
+.list-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--primary-color);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.list-item:hover::before {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Main Content */
+.main-content {
+  padding-top: 100px;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+/* Title Styling */
+.main-content h2 {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  text-shadow: 0.05em 0 0 var(--primary-color),
+    -0.05em -0.025em 0 var(--secondary-color);
+  animation: glitch 725ms infinite;
+  margin-bottom: 3rem;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  cursor: none;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-color);
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 2rem;
+    clip-path: circle(0% at 100% 0);
+    transition: all 0.6s ease-in-out;
+  }
+
+  .nav-menu.active {
+    clip-path: circle(140% at 100% 0);
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Hero Cards Mobile Adjustments */
+  .heroes-card-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .hero-card {
+    height: auto;
+    min-height: 600px;
+    position: relative;
+  }
+
+  .hero-card-image {
+    height: 600px;
+  }
+
+  .hero-card-infos {
+    position: absolute;
+    bottom: -100%;
+    max-height: 70%;
+    background: rgba(0, 0, 0, 0.95);
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+  }
+
+  .hero-card-infos.active {
+    bottom: 0;
+  }
+
+  /* Tap indicator */
+  .hero-card::after {
+    content: "Tap to view stats";
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    opacity: 0.8;
+  }
+
+  .hero-card.active::after {
+    display: none;
+  }
+
+  .main-content h2 {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .hero-card {
+    min-height: 500px;
+  }
+
+  .hero-card-image {
+    height: 500px;
+  }
+  .cursor,
+  .cursor-follower {
+    display: none;
+  }
+}
+
+/* Glitch Animation */
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 var(--primary-color),
+      -0.05em -0.025em 0 var(--secondary-color);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 var(--primary-color),
+      -0.05em -0.025em 0 var(--secondary-color);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 var(--primary-color),
+      0.025em 0.025em 0 var(--secondary-color);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 var(--primary-color),
+      0.025em 0.025em 0 var(--secondary-color);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 var(--primary-color),
+      0.05em 0 0 var(--secondary-color);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 var(--primary-color),
+      0.05em 0 0 var(--secondary-color);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 var(--primary-color),
+      -0.025em -0.025em 0 var(--secondary-color);
+  }
+}
+
+/* Update interactive elements */
+a,
+button {
+  cursor: none;
+}
+
+/* Desktop hover styles */
+.hero-card {
+  position: relative;
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Desktop hover effect */
+@media (min-width: 769px) {
+  .hero-card:hover .hero-card-infos {
+    bottom: 0;
+  }
+
+  .hero-card:hover .hero-card-image img {
+    filter: brightness(0.3);
+    transform: scale(1.05);
+  }
+}

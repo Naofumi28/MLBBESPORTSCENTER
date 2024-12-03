@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/news-card.css" />
+</head>
+
+<body>
+  <div class="cursor"></div>
+  <!-- Custom cursor element -->
+  <div class="cursor-follower"></div>
+  <!-- Follower for the custom cursor -->
+
+  <header>
+    <div class="header-logo">
+      <a href="../index.html" class="header-logo">
+        <img src="../assets/images/logo.png" alt="header logo">
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="../index.html" class="list-item">Home</a></li>
+        <li><a href="news.html" class="list-item active">News</a></li>
+        <li><a href="guide.html" class="list-item">Heroes Guide</a></li>
+        <li><a href="about.html" class="list-item">About Us</a></li>
+        <li><a href="services.html" class="list-item">Services</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="news-title-container">
+    <span class="glitch-text" data-text="LATEST NEWS">LATEST NEWS</span>
+  </div>
+
+  <main class="main-content">
+    <div class="div1 news-card">
+      <div class="parent-image-container">
+        <img src="../assets/news-image/image1.png" alt="news img" />
+        <a href="../news-pages/news1.html" class="overlay">
+          <span>Read More</span>
+        </a>
+      </div>
+      <div class="parent-child-container">
+        <a class="url-item" href="../news-pages/news1.html">Latest Tournament Updates</a>
+      </div>
+    </div>
+
+    <div class="right-content">
+      <div class="div2 news-card">
+        <div class="parent-image-container">
+          <img src="../assets/news-image/image2.png" alt="news img" />
+          <a href="../news-pages/news2.html" class="overlay">
+            <span>Read More</span>
+          </a>
+        </div>
+        <div class="parent-child-container">
+          <a class="url-item" href="../news-pages/news2.html">New Hero Release</a>
+        </div>
+      </div>
+
+      <div class="div4 news-card">
+        <div class="parent-image-container">
+          <img src="../assets/news-image/image3.png" alt="news img" />
+          <a href="../news-pages/news3.html" class="overlay">
+            <span>Read More</span>
+          </a>
+        </div>
+        <div class="parent-child-container">
+          <a class="url-item" href="../news-pages/news3.html">Balance Changes</a>
+        </div>
+      </div>
+
+      <div class="div5 news-card">
+        <div class="parent-image-container">
+          <img src="../assets/news-image/image4.png" alt="news img" />
+          <a href="../news-pages/news4.html" class="overlay">
+            <span>Read More</span>
+          </a>
+        </div>
+        <div class="parent-child-container">
+          <a class="url-item" href="../news-pages/news4.html">Community Event</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="footer">
+    <p>&copy; 2024 Mobile Legends. All rights reserved.</p>
+  </div>
+
+
+  <script src="../assets/js/news-link-direction.js"></script>
+  <script src="../assets/js/index.js"></script>
+</body>
+
+</html>

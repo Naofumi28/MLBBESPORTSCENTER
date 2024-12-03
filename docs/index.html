@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MLBB Esports Center</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="assets/css/index.css" />
+  <!-- Link to the main CSS file -->
+</head>
+
+<body>
+  <div class="cursor"></div>
+  <!-- Custom cursor element -->
+  <div class="cursor-follower"></div>
+  <!-- Follower for the custom cursor -->
+
+  <header>
+    <div class="header-logo">
+      <a href="index.html" class="header-logo">
+        <img src="assets/images/logo.png" alt="header logo">
+      </a>
+      <!-- Logo image -->
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">
+      <!-- Mobile menu toggle button -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nav-menu">
+      <!-- Navigation menu -->
+      <ul>
+        <li><a href="index.html" class="list-item active">Home</a></li>
+        <!-- Home link -->
+        <li><a href="pages/news.html" class="list-item">News</a></li>
+        <!-- News link -->
+        <li><a href="pages/guide.html" class="list-item">Heroes Guide</a></li>
+        <!-- Heroes Guide link -->
+        <li><a href="pages/about.html" class="list-item">About Us</a></li>
+        <!-- About Us link -->
+        <li><a href="pages/services.html" class="list-item">Services</a></li>
+        <!-- Services link -->
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <!-- Main content area -->
+    <div class="hero-section">
+      <!-- Hero section for the main title and subtitle -->
+      <div class="glitch-wrapper">
+        <h1 class="glitch" data-text="MOBILE LEGENDS">MOBILE LEGENDS</h1>
+        <!-- Main title -->
+        <h1 class="glitch" data-text="BANG-BANG">BANG-BANG</h1>
+        <!-- Subtitle -->
+      </div>
+      <p class="subtitle">
+        Explore Mobile Legends guides, updates, strategies, and tips for
+        ultimate gameplay!
+      </p>
+      <!-- Subtitle description -->
+      <button class="button-explore" onclick="showHeroesGuidePage()">
+        <!-- Button to explore heroes guide -->
+        <span>Explore Now</span>
+        <i class="fas fa-chevron-right"></i>
+        <!-- Font Awesome icon -->
+      </button>
+      <div class="download-section">
+        <h2>Download Mobile Legends</h2>
+        <p>Join millions of players in the Land of Dawn. Download now!</p>
+        <div class="download-buttons">
+          <!-- Google Play Button -->
+          <a href="https://play.google.com/store/apps/details?id=com.mobile.legends" target="_blank"
+            class="download-btn google-play">
+            <i class="fa-brands fa-google-play"></i>
+            <span>Get it on Google Play</span>
+          </a>
+          <!-- Apple App Store Button -->
+          <a href="https://apps.apple.com/app/mobile-legends-bang-bang/id1160056295" target="_blank"
+            class="download-btn app-store">
+            <i class="fa-brands fa-app-store"></i>
+            <span>Download on the App Store</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/js/index.js"></script>
+  <!-- Link to the main JavaScript file -->
+
+  <footer>
+    <div class="footer">
+      <p>&copy; 2024 Mobile Legends. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
